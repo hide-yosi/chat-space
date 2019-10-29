@@ -9,19 +9,24 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |tweets|string||
+|user_id|string|null: false, foreign_key: true|
 |picture|string||
+|group_id|string|null: false, foreign_key: true|
 ### Association
-- belongs to :user
-- has_many :groups
+- belongs_to :user 
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, foreign_key: true|
+|user_id|string|null: false, foreign_key: true|
 |menber|integer|null: false, foreign_key: true|
+|group_id|string|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- has many :users, through groups_users
 - has many :groups_users
+- has many :messages
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -36,7 +41,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |password|integer|null: false|
+|group_id|string|null: false, foreign_key: true|
 |nickname|string|null: false|
 ### Association
-- be longs to :groups
-- be longs :groups_users
+- has_many :messages
+- has_many :groups_users
+- has_many :groups, through users_groups
