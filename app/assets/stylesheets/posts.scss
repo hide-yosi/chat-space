@@ -10,24 +10,24 @@
 
 }
 
-.背景 {
+.haikei {
   height: calc(100vh - 30px);
   width: 100vw;
   background-color:#fafafa;
   
 }  
-.左端 {
+.hidarihasi {
   background-color:#253141;
   width: 300px;
   height:calc(100vh - 30px) ;
   float: left;
 }
-.左端上 {
+.hidarihasiue {
   background-color:#2f3e51;
   width: 300px;
   height: 100px;
   float: left;
-  .題名 {
+  .daimei {
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
@@ -52,7 +52,7 @@
   }
 
 
-.右下 {
+.migisita {
 background-color :#eeeeee;
 width: calc(100vw - 300px);
 height: 100px;
@@ -94,7 +94,7 @@ float: right;
  }
  
 }
-.一番下 {
+.itibannsita {
   background-color: gray;
   height: 100px;
   width: calc(100vw - 300px);
@@ -114,7 +114,7 @@ float: right;
  bottom:40px;
  left:930px;
 }
-  .投稿{
+  .toukou{
     width: 100px;
     height: 50px;
     padding: 0 30px;
