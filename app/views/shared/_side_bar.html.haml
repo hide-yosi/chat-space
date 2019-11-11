@@ -12,7 +12,7 @@
           %p.group__group-name{:style => "margin-left:20px"}
             = group.name
           %p.group__latest-message{:style => "margin-left:20px"}
-            まだメッセージはありません
+            = group.show_last_message
 -# .group  
 -#   %p.group__group-name{:style => "margin-left:20px"} comment
 -#   %p.group__latest-message{:style => "margin-left:20px"} これはテストです

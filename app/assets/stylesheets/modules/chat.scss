@@ -66,12 +66,12 @@
       }
     }
   }
-
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+   
     &__message {
       border: none;
       float: left;
@@ -80,9 +80,10 @@
     }
     &__mask {
       background-color: $white;
-      float: left;
+      float: right;
       height: 50px;
       padding-right: 10px;
+     
       &__image {
         font-size: 20px;
         line-height: 50px;
@@ -95,11 +96,9 @@
       background-color: $light_blue;
       border: none;
       color: $white;
-      float: right;
       font-size: 16px;
       height: 50px;
-      margin-left: 15px;
-      padding: 0 30px;
-    }
+    
+     }
   }
 }

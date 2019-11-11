@@ -19,7 +19,7 @@
 .hidarihasi {
   background-color:#253141;
   width: 300px;
-  height:calc(100vh - 30px) ;
+  height:calc(100vh - 100px) ;
   float: left;
 }
 .hidarihasiue {
@@ -52,11 +52,18 @@
   }
 
 
-.migisita {
+.migiue {
 background-color :#eeeeee;
 width: calc(100vw - 300px);
 height: 100px;
 float: right;
+
+ .migisita{
+  width: 300px;
+  height: 300px;
+  background-color: #333333;
+ 
+}
  .main-header__edit-btn {
   height: 40px;
   line-height: 40px;
@@ -74,55 +81,47 @@ float: right;
  .main-header__left-box__member-list{
   padding: 15px 0px 0px 40px ;
  }
- .matome {
-   display: flex;
-   padding: 46px 0px 0px 40px;
- }
- .message {
-  font-weight: bold;
-  font-size: 12px;
-  color: #999999;
-  position: flex;
- }
- .message__upper-info__date{
-   font-size: 12px;
-   margin-left:10px;
-  
- }
- .mesaage__text{
-   padding: 0px 0px 0px 40px;
- }
- 
+
 }
-.itibannsita {
+.migisita{
+  width: calc(100% - 300px);
+  height: 590px;
+  background-color:#fafafa;
+  float: right;
+  overflow: scroll;
+}
+
+.form{
   background-color: gray;
   height: 100px;
   width: calc(100vw - 300px);
   bottom: 0;
   right: 0;
   position: fixed;
+  
 
+   &__message {
+     width: 80%;
+     height: 50px;
+     margin: 25px 0px 0px 40px;
+     position: relative;
+   }
+   .icon{
+   position: absolute;
+    bottom:40px;
+    right: 200px;
+   }
+   .hidden{
+    visibility: hidden; 
+   }
 
-  .input-box__text {
-    width: 81%;
-    height: 50px;
-    margin: 25px 0px 0px 40px ;
-    
-}
-.fa.fa-image {
- position: absolute;
- bottom:40px;
- left:930px;
-}
-  .toukou{
+  &__submit{
     width: 100px;
     height: 50px;
-    padding: 0 30px;
-    margin-left: 15px;
     background-color: #38aef0;
     color: white;
-    font-size: 20px;
-    bottom: 20px;
-    
-  }  
-}  
+    position: absolute;
+    right: 25px;
+    top: 25px;
+   }
+}
