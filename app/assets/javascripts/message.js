@@ -53,7 +53,21 @@ $(function(){
   };
   $('.new_message').on('submit', function(e) {
     e.preventDefault();
-    
+    var formData = new FormData(this);
+    var url = $(this).attr('action');
+
+    $.ajax({
+      url: url,  //同期通信でいう『パス』
+      type: 'POST',  //同期通信でいう『HTTPメソッド』
+      data: formData,  
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+
+    .done(function(data){
+      var html = buildHTML(data);
+    $('.migisita').append(html);
     $('.form__submit').prop('disabled', false);
     $('.migisita').animate({ scrollTop: $('.migisita')[0].scrollHeight});
     $("form")[0].reset();
@@ -68,14 +82,30 @@ $(function(){
   
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data('id');
-    console.log(last_message_id)
+    
     $.ajax({
       url: "api/messages",  
       type: 'get', 
       data: {id: last_message_id},
       dataType: 'json',
+    
     })
     .done(function(data){ 
+     if (data.length !==0) {
+      var insertHTML = '';
+      $.each(data, function(i, message) {
+        insertHTML += buildHTML(data)
+      });
+      $('.migisita').append(insertHTML);
+       $('.form__submit').prop('disabled', false);
+       $('.migisita').animate({ scrollTop: $('.migisita')[0].scrollHeight});
+       $(".form__mask").prop('disabled', false);
+        return false;
+     }
+    })
+   .fail(function(){
+     alert("メッセージ送信に失敗しました");
+   });
   }
   if (document.location.href.match(/\/groups\/\d+\/messages/)){
    setInterval(reloadMessages, 7000);
