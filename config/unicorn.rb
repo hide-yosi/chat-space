@@ -17,7 +17,6 @@ stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 #通常のログを記録するファイルを指定
 stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
-
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
 
@@ -48,7 +47,6 @@ before_fork do |server, worker|
     end
   end
 end
-
 
 after_fork do |_server, _worker|
   defined?(ActiveRecord::Base) && ActiveRecord::Base.establish_connection
