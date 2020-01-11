@@ -5,8 +5,13 @@
       = link_to edit_group_path(@group) do
         .main-header__edit-btn
           Edit
-      .main-header__left-box test_group
-      %ul.main-header__left-box__member-list aaaa
+      .main-header__left-box 
+        = @group.name
+      %ul.main-header__left-box__member-list 
+        member:
+        -@group.users.each do|user|
+          =user.name
+        
     .migisita
       = render @messages
     .form
@@ -16,4 +21,4 @@
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__submit'  
