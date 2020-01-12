@@ -94,7 +94,8 @@ $(function(){
      if (data.length !==0) {
       var insertHTML = '';
       $.each(data, function(i, message) {
-        insertHTML += buildHTML(data)
+        
+        insertHTML += buildHTML(message)
       });
       $('.migisita').append(insertHTML);
        $('.form__submit').prop('disabled', false);
@@ -107,7 +108,7 @@ $(function(){
      alert("メッセージ送信に失敗しました");
    });
   }
-  if (document.location.href.match(/\/groups\/\d+\/messages/)){
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
    setInterval(reloadMessages, 7000);
   }
 });
